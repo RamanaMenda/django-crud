@@ -1,0 +1,29 @@
+#container {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 20vh;
+}
+.card__details {
+  padding: 16px 8px 8px 8px;
+}
+.card {
+    background-color: pink;
+    border: 1px solid #bacdd8;
+    padding: 8px;
+    border-radius: 15px;
+    text-align: center;
+}
+p {
+font-size: 24px;
+color: #ff0000;
+line-height: 150%;
+text-align: center;
+}
+.tag {
+padding: 4px 8px;
+border: 1px solid #e5eaed;
+border-radius: 15px;
+font-size: 16px;
+font-weight: 600;
+color: #788697;
+}

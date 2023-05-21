@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="container">
+    <div class="card">
+        <div class="card__details">
+        <p> UPDATE DATA </p>
+        <form action="update" method="post" autocomplete="off">
+            {% csrf_token %}
+            <label><p style="color: blue">Condition</p></label>
+            <input list = "oper" name="operation" placeholder="Column Name" class="tag"><br><br>
+            <datalist id="oper">
+                <option value='Name'></option>
+                <option value='Roll Number'></option>
+                <option value='Phone Number'></option>
+                <option value='Email'></option>
+            </datalist>
+            <input type="text" name="val" placeholder="Value" class="tag">
+            <br>
+            <label><p style="color: blue">New Values</p></label>
+            <input list = "oper" name="object" placeholder="Column Name" class="tag"><br><br>
+            <input type="text" name="upd" placeholder="Value" class="tag">
+            <br><br>
+            <input type = "submit" class="tag">
+        </form>
+        <div>
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

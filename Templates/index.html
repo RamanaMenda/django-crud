@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+    <title>Document</title>
+</head>
+<body bgcolor="cyan">
+    <div id="container">
+        <div class="card">
+            <div class="card__details">
+            <p> Select the Operation </p>
+            <form action='select' method="post" autocomplete="off">
+
+                {% csrf_token %}
+                <input list = "oper" name="operation" placeholder="SELECT" class="tag">
+                <datalist id="oper">
+                    <option value="CREATE"></option>
+                    <option value="READ"></option>
+                    <option value="UPDATE"></option>
+                    <option value="DELETE"></option>
+                </datalist> <br><br>
+            <input type = "submit" class="tag">
+            </form>
+            <div>
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

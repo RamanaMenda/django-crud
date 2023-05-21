@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+        #container{
+            min-width: 700px;
+            margin: 0px auto;
+            margin-top: 10vh;
+        }
+        .tag{
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <div id="container">
+        <div class="card">
+            <div class="card__details">
+                <table border='1px',cellspacing='30px'class="tag" style="background-color: hotpink;">
+                    <tr>
+                        <td class="tag" style="background-color: bisque;color:red"> Roll Number </td>
+                        <td class="tag" style="background-color: bisque;color:red"> Name </td>
+                        <td class="tag" style="background-color: bisque;color:red">Phone Number</td>
+                        <td class="tag" style="background-color: bisque;color:red">Email id</td>
+                    </tr>
+                    {% for row in rows %}
+                    <tr>
+                        <td class="tag" style="background-color: springgreen;">{{row.0}}</td>
+                        <td class="tag" style="background-color: springgreen;">{{row.1}}</td>
+                        <td class="tag" style="background-color: springgreen;">{{row.2}}</td>
+                        <td class="tag" style="background-color: springgreen;">{{row.3}}</td>
+                    </tr>
+                    {% endfor %}
+                </table><br><br>
+                <form action="btn" method="post">
+                    {% csrf_token %}
+                    <input type="submit" class="tag" style="float: right;" value="Back">
+                </form>
+            <div>
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

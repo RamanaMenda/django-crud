@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div id="container">
+        <div class="card">
+            <div class="card__details">
+            <p> INPUT DATA </p>
+            <form action="create" method="post" autocomplete="off">
+                {% csrf_token %}
+                <input type = 'text' name = 'name' placeholder="Name" class="tag"><br><br>
+                <input type = 'int' name = 'roll' placeholder="Roll Number" class="tag"><br><br>
+                <input type = 'int' name = 'pno' placeholder="Phone Number" class="tag"><br><br>
+                <input type = 'email' name = 'email' placeholder="Email" class="tag"><br><br>
+                <br><input type = 'submit' class="tag">
+            </form>
+            <div>
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
